@@ -9,6 +9,7 @@
 #include <cassert>
 #include <iostream>
 #include "tiny_obj_loader.h"
+#include "Vectors.h"
 #pragma comment (lib,"Gdiplus.lib")
 #define TINYOBJLOADER_IMPLEMENTATION 
 using namespace Gdiplus;
