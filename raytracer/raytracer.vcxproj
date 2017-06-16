@@ -139,10 +139,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ObjLoader.cpp" />
     <ClCompile Include="raytracer.cpp" />
     <ClCompile Include="tiny_obj_loader.cc" />
+    <ClCompile Include="whitted.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ObjLoader.h" />
     <ClInclude Include="tiny_obj_loader.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

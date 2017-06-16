@@ -1,37 +1,29 @@
-﻿  raytracer.cpp
-c:\users\dingus\documents\visual studio 2017\projects\raytracer\raytracer\raytracer.cpp(171): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\dingus\documents\visual studio 2017\projects\raytracer\raytracer\raytracer.cpp(177): warning C4305: 'argument': truncation from 'double' to 'const float'
-c:\users\dingus\documents\visual studio 2017\projects\raytracer\raytracer\raytracer.cpp(186): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\dingus\documents\visual studio 2017\projects\raytracer\raytracer\raytracer.cpp(235): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\dingus\documents\visual studio 2017\projects\raytracer\raytracer\raytracer.cpp(239): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\dingus\documents\visual studio 2017\projects\raytracer\raytracer\raytracer.cpp(240): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\dingus\documents\visual studio 2017\projects\raytracer\raytracer\raytracer.cpp(284): warning C4018: '<': signed/unsigned mismatch
-c:\users\dingus\documents\visual studio 2017\projects\raytracer\raytracer\raytracer.cpp(367): error C3861: 'FileExists': identifier not found
-c:\users\dingus\documents\visual studio 2017\projects\raytracer\raytracer\raytracer.cpp(370): error C3861: 'FileExists': identifier not found
-c:\users\dingus\documents\visual studio 2017\projects\raytracer\raytracer\raytracer.cpp(375): error C2664: 'Gdiplus::Bitmap *Gdiplus::Bitmap::FromFile(const WCHAR *,BOOL)': cannot convert argument 1 from 'const char *' to 'const WCHAR *'
-  c:\users\dingus\documents\visual studio 2017\projects\raytracer\raytracer\raytracer.cpp(375): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
-c:\users\dingus\documents\visual studio 2017\projects\raytracer\raytracer\raytracer.cpp(399): warning C4003: not enough actual parameters for macro 'max'
-c:\users\dingus\documents\visual studio 2017\projects\raytracer\raytracer\raytracer.cpp(399): error C2589: '(': illegal token on right side of '::'
-c:\users\dingus\documents\visual studio 2017\projects\raytracer\raytracer\raytracer.cpp(399): error C2062: type 'unknown-type' unexpected
-c:\users\dingus\documents\visual studio 2017\projects\raytracer\raytracer\raytracer.cpp(399): error C2059: syntax error: ')'
-c:\users\dingus\documents\visual studio 2017\projects\raytracer\raytracer\raytracer.cpp(400): warning C4003: not enough actual parameters for macro 'max'
-c:\users\dingus\documents\visual studio 2017\projects\raytracer\raytracer\raytracer.cpp(400): error C2589: '(': illegal token on right side of '::'
-c:\users\dingus\documents\visual studio 2017\projects\raytracer\raytracer\raytracer.cpp(400): error C2062: type 'unknown-type' unexpected
-c:\users\dingus\documents\visual studio 2017\projects\raytracer\raytracer\raytracer.cpp(400): error C2059: syntax error: ')'
-c:\users\dingus\documents\visual studio 2017\projects\raytracer\raytracer\raytracer.cpp(427): warning C4018: '>': signed/unsigned mismatch
-c:\users\dingus\documents\visual studio 2017\projects\raytracer\raytracer\raytracer.cpp(428): warning C4018: '>': signed/unsigned mismatch
-c:\users\dingus\documents\visual studio 2017\projects\raytracer\raytracer\raytracer.cpp(429): warning C4018: '>': signed/unsigned mismatch
-c:\users\dingus\documents\visual studio 2017\projects\raytracer\raytracer\raytracer.cpp(482): error C3861: 'CalcNormal': identifier not found
-c:\users\dingus\documents\visual studio 2017\projects\raytracer\raytracer\raytracer.cpp(499): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\dingus\documents\visual studio 2017\projects\raytracer\raytracer\raytracer.cpp(514): warning C4244: 'argument': conversion from 'double' to 'tinyobj::real_t', possible loss of data
-c:\users\dingus\documents\visual studio 2017\projects\raytracer\raytracer\raytracer.cpp(515): warning C4244: 'argument': conversion from 'double' to 'tinyobj::real_t', possible loss of data
-c:\users\dingus\documents\visual studio 2017\projects\raytracer\raytracer\raytracer.cpp(516): warning C4244: 'argument': conversion from 'double' to 'tinyobj::real_t', possible loss of data
-c:\users\dingus\documents\visual studio 2017\projects\raytracer\raytracer\raytracer.cpp(523): error C2039: 'vb': is not a member of 'DrawObject'
-  c:\users\dingus\documents\visual studio 2017\projects\raytracer\raytracer\raytracer.cpp(79): note: see declaration of 'DrawObject'
-c:\users\dingus\documents\visual studio 2017\projects\raytracer\raytracer\raytracer.cpp(559): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+﻿  whitted.cpp
+c:\users\rigby\desktop\raytracer\raytracer\raytracer\objloader.h(33): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(207): note: see declaration of 'fopen'
-c:\users\dingus\documents\visual studio 2017\projects\raytracer\raytracer\raytracer.cpp(605): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\dingus\documents\visual studio 2017\projects\raytracer\raytracer\raytracer.cpp(606): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\dingus\documents\visual studio 2017\projects\raytracer\raytracer\raytracer.cpp(607): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\dingus\documents\visual studio 2017\projects\raytracer\raytracer\raytracer.cpp(608): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\dingus\documents\visual studio 2017\projects\raytracer\raytracer\raytracer.cpp(609): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\rigby\desktop\raytracer\raytracer\raytracer\objloader.h(189): warning C4018: '>': signed/unsigned mismatch
+c:\users\rigby\desktop\raytracer\raytracer\raytracer\objloader.h(190): warning C4018: '>': signed/unsigned mismatch
+c:\users\rigby\desktop\raytracer\raytracer\raytracer\objloader.h(191): warning C4018: '>': signed/unsigned mismatch
+c:\users\rigby\desktop\raytracer\raytracer\raytracer\objloader.h(261): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\rigby\desktop\raytracer\raytracer\raytracer\objloader.h(276): warning C4244: 'argument': conversion from 'double' to 'tinyobj::real_t', possible loss of data
+c:\users\rigby\desktop\raytracer\raytracer\raytracer\objloader.h(277): warning C4244: 'argument': conversion from 'double' to 'tinyobj::real_t', possible loss of data
+c:\users\rigby\desktop\raytracer\raytracer\raytracer\objloader.h(278): warning C4244: 'argument': conversion from 'double' to 'tinyobj::real_t', possible loss of data
+c:\users\rigby\desktop\raytracer\raytracer\raytracer\objloader.h(125): warning C4101: 'comp': unreferenced local variable
+c:\users\rigby\desktop\raytracer\raytracer\raytracer\objloader.h(124): warning C4101: 'h': unreferenced local variable
+c:\users\rigby\desktop\raytracer\raytracer\raytracer\objloader.h(124): warning C4101: 'w': unreferenced local variable
+c:\users\rigby\desktop\raytracer\raytracer\raytracer\whitted.cpp(113): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+c:\users\rigby\desktop\raytracer\raytracer\raytracer\whitted.cpp(148): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\rigby\desktop\raytracer\raytracer\raytracer\whitted.cpp(148): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\rigby\desktop\raytracer\raytracer\raytracer\whitted.cpp(165): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\rigby\desktop\raytracer\raytracer\raytracer\whitted.cpp(169): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\rigby\desktop\raytracer\raytracer\raytracer\whitted.cpp(292): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+c:\users\rigby\desktop\raytracer\raytracer\raytracer\whitted.cpp(293): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\rigby\desktop\raytracer\raytracer\raytracer\whitted.cpp(501): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+c:\users\rigby\desktop\raytracer\raytracer\raytracer\whitted.cpp(526): warning C4244: 'argument': conversion from 'double' to 'const float', possible loss of data
+c:\users\rigby\desktop\raytracer\raytracer\raytracer\whitted.cpp(532): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\rigby\desktop\raytracer\raytracer\raytracer\whitted.cpp(533): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\rigby\desktop\raytracer\raytracer\raytracer\whitted.cpp(567): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\rigby\desktop\raytracer\raytracer\raytracer\whitted.cpp(591): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\rigby\desktop\raytracer\raytracer\raytracer\whitted.cpp(593): warning C4305: '=': truncation from 'double' to 'float'
+  raytracer.vcxproj -> C:\Users\rigby\Desktop\raytracer\raytracer\Debug\raytracer.exe
+  raytracer.vcxproj -> C:\Users\rigby\Desktop\raytracer\raytracer\Debug\raytracer.pdb (Partial PDB)
