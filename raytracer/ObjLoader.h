@@ -19,6 +19,9 @@ public:
 	ObjLoader();
 	typedef struct {
 		//GLuint vb;  // vertex buffer
+		std::vector<uint32_t> indices;
+		std::vector<Vec3f> vertices; 
+		std::vector<Vec2f> texcoords;
 		int numTriangles;
 		size_t material_id;
 	} DrawObject;
@@ -214,17 +217,18 @@ public:
 						assert(f0 >= 0);
 						assert(f1 >= 0);
 						assert(f2 >= 0);
-
+												
 						v[0][k] = attrib.vertices[3 * f0 + k];
 						v[1][k] = attrib.vertices[3 * f1 + k];
 						v[2][k] = attrib.vertices[3 * f2 + k];
+						//o.vertices.push_back(Vec3f(v[k][0], v[k][1], v[k][2]));
 						bmin[k] = std::fmin(v[0][k], bmin[k]);
 						bmin[k] = std::fmin(v[1][k], bmin[k]);
 						bmin[k] = std::fmin(v[2][k], bmin[k]);
 						bmax[k] = std::fmax(v[0][k], bmax[k]);
 						bmax[k] = std::fmax(v[1][k], bmax[k]);
 						bmax[k] = std::fmax(v[2][k], bmax[k]);
-					}
+					}					
 
 					float n[3][3];
 					if (attrib.normals.size() > 0) {
@@ -254,7 +258,8 @@ public:
 					for (int k = 0; k < 3; k++) {
 						vb.push_back(v[k][0]);
 						vb.push_back(v[k][1]);
-						vb.push_back(v[k][2]);
+						vb.push_back(v[k][2]);						
+						o.vertices.push_back(Vec3f(v[k][0], v[k][1], v[k][2]));
 						vb.push_back(n[k][0]);
 						vb.push_back(n[k][1]);
 						vb.push_back(n[k][2]);
@@ -280,7 +285,13 @@ public:
 
 						vb.push_back(tc[k][0]);
 						vb.push_back(tc[k][1]);
+
+						o.texcoords.push_back(Vec2f(tc[k][0], tc[k][1]));
 					}
+					
+					o.indices.push_back(idx0.vertex_index);
+					o.indices.push_back(idx1.vertex_index);
+					o.indices.push_back(idx2.vertex_index);
 				}
 
 				//o.vb = 0;

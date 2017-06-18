@@ -129,7 +129,7 @@ struct Options
 	float imageAspectRatio;
 	uint8_t maxDepth;
 	Vec3f backgroundColor;
-	float bias;
+	float bias;	
 };
 
 class Light
@@ -232,6 +232,7 @@ bool rayTriangleIntersect(
 	return true;
 }
 
+
 class MeshTriangle : public Object
 {
 public:
@@ -243,7 +244,8 @@ public:
 	{
 		uint32_t maxIndex = 0;
 		for (uint32_t i = 0; i < numTris * 3; ++i)
-			if (vertsIndex[i] > maxIndex) maxIndex = vertsIndex[i];
+			if (vertsIndex[i] > maxIndex) 
+				maxIndex = vertsIndex[i];
 		maxIndex += 1;
 		vertices = std::unique_ptr<Vec3f[]>(new Vec3f[maxIndex]);
 		memcpy(vertices.get(), verts, sizeof(Vec3f) * maxIndex);
@@ -300,6 +302,33 @@ public:
 	std::unique_ptr<uint32_t[]> vertexIndex;
 	std::unique_ptr<Vec2f[]> stCoordinates;
 };
+
+//class BetterMesh : public MeshTriangle
+//{
+//public:
+//	BetterMesh(
+//		const Vec3f *verts,
+//		const uint32_t *vertsIndex,
+//		const uint32_t &numTris,
+//		const Vec2f *st) : 
+//		MeshTriangle(verts,
+//			vertsIndex,
+//			numTris,
+//			st)
+//	{
+//		uint32_t maxIndex = 0;
+//		for (uint32_t i = 0; i < numTris * 3; ++i)
+//			if (vertsIndex[i] > maxIndex) maxIndex = vertsIndex[i];
+//		maxIndex += 1;
+//		vertices = std::unique_ptr<Vec3f[]>(new Vec3f[maxIndex]);
+//		memcpy(vertices.get(), verts, sizeof(Vec3f) * maxIndex);
+//		vertexIndex = std::unique_ptr<uint32_t[]>(new uint32_t[numTris * 3]);
+//		memcpy(vertexIndex.get(), vertsIndex, sizeof(uint32_t) * numTris * 3);
+//		numTriangles = numTris;
+//		stCoordinates = std::unique_ptr<Vec2f[]>(new Vec2f[maxIndex]);
+//		memcpy(stCoordinates.get(), st, sizeof(Vec2f) * maxIndex);
+//	}
+//};
 
 // [comment]
 // Compute reflection direction
@@ -527,7 +556,8 @@ void render(
 	Vec3f *pix = framebuffer;
 	float scale = tan(deg2rad(options.fov * 0.5));
 	float imageAspectRatio = options.width / (float)options.height;
-	Vec3f orig(0);
+	// x(-left +right) y(-down +up) z(-in +out) +z out of the screen
+	Vec3f orig(0, 0, 1);
 	for (uint32_t j = 0; j < options.height; ++j) {
 		for (uint32_t i = 0; i < options.width; ++i) {
 			// generate primary ray direction
@@ -592,15 +622,24 @@ int main(int argc, char **argv)
 	options.fov = 90;
 	options.backgroundColor = Vec3f(0.235294, 0.67451, 0.843137);	
 	options.maxDepth = 5;
-	options.bias = 0.00001;
-
+	options.bias = 0.00001;	
 
 	float bmin[3], bmax[3];
 	std::vector<tinyobj::material_t> materials;
 	std::map<std::string, Bitmap*> textures;
 	std::vector<ObjLoader::DrawObject> gDrawObjects;
 	ObjLoader::LoadObjAndConvert(bmin, bmax, &gDrawObjects, materials, textures, "./CornellBox-Original.obj");
-
+	
+	for (ObjLoader::DrawObject obj : gDrawObjects)
+	{
+		ObjLoader::DrawObject obj = gDrawObjects[0];
+		const Vec3f* vertices = const_cast<const Vec3f*>(&obj.vertices[0]);
+		const uint32_t* indices = const_cast<const uint32_t*>(&obj.indices[0]);
+		const Vec2f* texcoords = const_cast<const Vec2f*>(&obj.texcoords[0]);
+		MeshTriangle *tri = new MeshTriangle(vertices, indices, obj.numTriangles, texcoords);
+		tri->materialType = DIFFUSE_AND_GLOSSY;
+		objects.push_back(std::unique_ptr<MeshTriangle>(tri));
+	}	
 	// finally, render
 	render(options, objects, lights);	
 
